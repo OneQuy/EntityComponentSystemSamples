@@ -1,7 +1,9 @@
 ﻿using System;
 using Unity.Entities;
 
-// ReSharper disable once InconsistentNaming
+// CẦN GẮN VÀO GO!
+// LÀ STRUCT
+
 [GenerateAuthoringComponent]
 public struct RotationSpeed_ForEach : IComponentData
 {

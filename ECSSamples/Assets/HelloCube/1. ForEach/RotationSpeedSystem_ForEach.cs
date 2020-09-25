@@ -1,11 +1,10 @@
-using Unity.Entities;
+﻿using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 
+// KO CẦN GẮN VÀO GO NÀO!
 // This system updates all entities in the scene with both a RotationSpeed_ForEach and Rotation component.
-
-// ReSharper disable once InconsistentNaming
 public class RotationSpeedSystem_ForEach : SystemBase
 {
     // OnUpdate runs on the main thread.
@@ -13,10 +12,9 @@ public class RotationSpeedSystem_ForEach : SystemBase
     {
         float deltaTime = Time.DeltaTime;
         
-        // Schedule job to rotate around up vector
         Entities
-            .WithName("RotationSpeedSystem_ForEach")
-            .ForEach((ref Rotation rotation, in RotationSpeed_ForEach rotationSpeed) =>
+            .WithName("RotationSpeedSystem_ForEach") // CÙNG TÊN VỚI LỚP NÀY (CÓ HAY KO CŨNG DC, ÉO HIỂU ĐỂ LÀM GÌ)
+            .ForEach((ref Rotation rotation, in RotationSpeed_ForEach rotationSpeed) => // REF HAY IN ĐỀU ĐƯỢC
             {
                 rotation.Value = math.mul(
                     math.normalize(rotation.Value), 
